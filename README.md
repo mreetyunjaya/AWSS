@@ -6,3 +6,4 @@ Automated web vulnerability scanners have been heavily used to assess the securi
 In this thesis, we design and implement a new automated web vulnerability scanner called Automated Web Software Security (AWSS) Toolkit, which scans a web project’s source code and generates a report of the results with detailed explanation about each possible vulnerability and how to secure against it. 
 
 NOTE!!: It is Still under development, Usages and Notes will be added later..
+Works only on Windows for Now!, not tested on Linux, Tested on OSX it didn't work, didn't have time to check why, will check later.
