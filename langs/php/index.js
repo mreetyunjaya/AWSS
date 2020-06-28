@@ -156,7 +156,7 @@ module.exports = function() {
 					
 					// Admin table
 					if(phpCore.config.YOUR_WEBAPP_DBMS_USER_TABLE_NAME != phpCore.config.YOUR_WEBAPP_DBMS_ADMIN_TABLE_NAME){ // if same table, no need to check
-						password_hash = phpCore.getOneColumnValueFromDBMS(phpCore.config.YOUR_WEBAPP_DBMS_USER_TABLE_PASSWORD_COLUMN_NAME, phpCore.config.YOUR_WEBAPP_DBMS_ADMIN_TABLE_NAME);
+						password_hash = phpCore.getOneColumnValueFromDBMS(phpCore.config.YOUR_WEBAPP_DBMS_ADMIN_TABLE_PASSWORD_COLUMN_NAME, phpCore.config.YOUR_WEBAPP_DBMS_ADMIN_TABLE_NAME);
 						
 						if(password_hash){
 							if(password_hash.length < 60){
