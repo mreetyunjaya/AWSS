@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const timestampBeforeScanStarted = Date.now() / 1000 | 0;
 process.stdout.write('\033c'); // Clear screen
 
 // Imports
@@ -23,5 +24,9 @@ else {
 
 if(start != ""){
 	new start();
+	
+	const totalScanTime = (Date.now() / 1000 | 0) - timestampBeforeScanStarted;
+	console.log("Total scan time: " + totalScanTime + " Seconds");
+	console.log();
 }
 

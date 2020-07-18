@@ -7,15 +7,15 @@ module.exports = {
 	
 	// if above IS_DBMS_USED = true, bellow settings are enabled and must be set
 	YOUR_WEBAPP_DBMS_SERVER_IP: "localhost",
-	YOUR_WEBAPP_DBMS_DB_NAME: "project_database",
+	YOUR_WEBAPP_DBMS_DB_NAME: "online-shopping-system",
 	YOUR_WEBAPP_DBMS_USERNAME: "root",
 	YOUR_WEBAPP_DBMS_PASSWORD: "",
 	
-	YOUR_WEBAPP_DBMS_USER_TABLE_NAME: "user_table_name",
+	YOUR_WEBAPP_DBMS_USER_TABLE_NAME: "user_info",
 	YOUR_WEBAPP_DBMS_USER_TABLE_PASSWORD_COLUMN_NAME: "password",
-	YOUR_WEBAPP_DBMS_USER_TABLE_SALT_COLUMN_NAME: "salt", // if not existed or used bcrypt or don't know what it is, leave it empty text: ""
+	YOUR_WEBAPP_DBMS_USER_TABLE_SALT_COLUMN_NAME: "", // if not existed or used bcrypt or don't know what it is, leave it empty text: ""
 
-	YOUR_WEBAPP_DBMS_ADMIN_TABLE_NAME: "admin_table_name", // maybe same of user table, so write same table name // if hardcoded admin credentials or doesn't exist, leave it empty text: ""
-	YOUR_WEBAPP_DBMS_ADMIN_TABLE_PASSWORD_COLUMN_NAME: "password", // maybe same of user table, so write same column name
-	YOUR_WEBAPP_DBMS_ADMIN_TABLE_SALT_COLUMN_NAME: "salt", // if not existed or used bcrypt or don't know what it is, leave it empty text: "" // maybe same of user table, so write same column name
+	YOUR_WEBAPP_DBMS_ADMIN_TABLE_NAME: "admin_info", // maybe same of user table, so write same table name // if hardcoded admin credentials or doesn't exist, leave it empty text: ""
+	YOUR_WEBAPP_DBMS_ADMIN_TABLE_PASSWORD_COLUMN_NAME: "admin_password", // maybe same of user table, so write same column name
+	YOUR_WEBAPP_DBMS_ADMIN_TABLE_SALT_COLUMN_NAME: "", // if not existed or used bcrypt or don't know what it is, leave it empty text: "" // maybe same of user table, so write same column name
 };

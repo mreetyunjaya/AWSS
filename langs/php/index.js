@@ -326,33 +326,32 @@ module.exports = function() {
 	
 		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN);
 		
-		var isHtmlPurifierFound = false;
-		var isHtmlEntitiesFound = false;
-		
 		for(var i = 0; i < files.length; i++){
-			if(!isHtmlPurifierFound && files[i].toLowerCase().includes("htmlpurifier")){
-				isHtmlPurifierFound = true;
+			if(core.findLineInFile("$_GET[", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_GET[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_GET[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_GET[", files[i], false, true) == 0 && core.findLineInFile("xss $_GET[", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_GET[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_GET' user input can be injected, please make sure to filter or sanitize any $_GET user input from Javascript, HTML and CSS codes input", true);
+				}
 			}
 			
-			if(!isHtmlEntitiesFound && (core.findLineInFile("htmlentities", files[i]) > 0 || core.findLineInFile("htmlspecialchars", files[i]) > 0)){
-				isHtmlEntitiesFound = true;
+			if(core.findLineInFile("$_POST[", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_POST[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_POST[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_POST[", files[i], false, true) == 0 && core.findLineInFile("xss $_POST[", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_POST[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_POST' user input can be injected, please make sure to filter or sanitize any $_POST user input from Javascript, HTML and CSS codes input", true);	
+				}
+			}
+			
+			if(core.findLineInFile("$_REQUEST[", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("xss $_REQUEST[", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_REQUEST[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_REQUEST' user input can be injected, please make sure to filter or sanitize any $_REQUEST user input from Javascript, HTML and CSS codes input", true);	
+				}
 			}
 			
 			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile(".innerHTML", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'.innerHTML' function can be injected, please use '.innerText' instead", true);
 			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("eval(", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'eval()' function can be injected, never use it. needing to use eval() usually indicates a problem in your code design.", true);
 		}
 		
-		var nu_vul_fo = num_vulnerabilities_found;
-		
-		if(!isHtmlPurifierFound && !isHtmlEntitiesFound){
-			nu_vul_fo++;
-			num_vulnerabilities_found = -1;
-			core.appendToFile("<span style='color:red; font-weight:bold;'>The whole Project might be vulnerable to Cross-Site Scripting Attacks, no input escaping detected!</span><br/>");
-		}
-		
 		// Results
 		core.showResults(num_vulnerabilities_found, "Cross-Site Scripting", "../langs/php/docs/php_cross_site_scripting_prevention.pdf", true);
-		return nu_vul_fo;
+		return num_vulnerabilities_found;
 	}
 	
 	function checkForUsingComponentsWithKnownVulnerabilities(){
@@ -490,7 +489,7 @@ module.exports = function() {
 		
 		var num_vulnerabilities_found = 0;
 		
-		// Checking for redirection ignore, thus my leak the rest of the page (which page may generate warning or error).
+		// Checking for redirection ignore, thus may leak the rest of the page (which page may generate warning or error).
 		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN, [], true, true, ["php"]);
 		
 		for(var i = 0; i < files.length; i++){
@@ -521,7 +520,7 @@ module.exports = function() {
 							var hasProblem = true;
 							if(exits.length > 0){
 								for(var l = 0; l < exits.length; l++){
-									if(Math.abs(headers[j] - exits[l]) <= 5){
+									if(Math.abs(headers[j] - exits[l]) <= 5){ // distance(numOfLines) between two functions is 5 lines
 										hasProblem = false;
 										break;
 									}
@@ -581,7 +580,7 @@ module.exports = function() {
 			}
 		}
 		
-		// Check for weird files exists in project
+		// Check for weird files exist in project
 		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN, [], true, true, ["sql", "txt", "zip", "rar", "tar", "gz", "7z", "z", "iso", "json", "doc", "docx", "xls", "xlsx"]);
 
 		for(var i = 0; i < files.length; i++){
