@@ -18,25 +18,20 @@ module.exports = function() {
 		
 		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN, [], true, true, ["php"]);
 		
-		// SQL Injection Check
-		if(phpCore.config.IS_DBMS_USED){
-			if(phpCore.config.DBMS == "mysql"){
-				for(var i = 0; i < files.length; i++){
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->multi_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'multi_query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysqli_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysqli_query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->real_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'real_query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->reap_async_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'reap_async_query' function can be injected", true);
-					
-					// Old mysql functions
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_db_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_db_query' function can be injected", true);
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_unbuffered_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'mysql_unbuffered_query' function can be injected", true);
-				}
-			}
-			else {
-				// for other dbms if used
-			}
+		for(var i = 0; i < files.length; i++){
+			// MySQL Injection Check
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->multi_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'multi_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysqli_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysqli_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->real_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'real_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->reap_async_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'reap_async_query' function can be injected", true);
+			
+			// Old mysql functions
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_db_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_db_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_unbuffered_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'mysql_unbuffered_query' function can be injected", true);
+		
+			// PostgreSQL injection detections can be implemented here // but not written yet
 		}
 		
 		// Prepare OS Commands Array to Check
@@ -366,7 +361,7 @@ module.exports = function() {
 				core.appendToFile("<span style='color:red; font-weight:bold;'>Server's PHP version is low and vulnerable, your PHP server must be up to date</span><br/>");
 			}
 			
-			if(core.runShellCmd(phpCore.config.PHP_EXE_BIN_PATH + " -r \"echo LIBXML_VERSION ;\"") < 20909){
+			if(core.runShellCmd(phpCore.config.PHP_EXE_BIN_PATH + " -r \"echo LIBXML_VERSION ;\"") < 20904){
 				num_vulnerabilities_found++;
 				core.appendToFile("<span style='color:red; font-weight:bold;'>PHP Server's XML parser version is low and vulnerable, your XML parser must be up to date</span><br/>");
 			}

@@ -123,7 +123,7 @@ module.exports = function() {
 					arrayOfFiles = this.getAllFilesPaths(dirPath + "/" + file, arrayOfFiles, traverse, listOnlySpecificExtensions, extensions, ignoreFilesOrFolders);
 				}
 				else {
-					arrayOfFiles.push(path.join(__dirname, dirPath, "/", file + "/").replace("\\"+config.THIS_PROJECT_FOLDER_NAME, ""));
+					arrayOfFiles.push(path.join(__dirname, dirPath, "/", file + "/").replace("\\"+config.THIS_PROJECT_FOLDER_NAME, "").replace("/"+config.THIS_PROJECT_FOLDER_NAME, ""));
 				}
 			} 
 			else {
@@ -138,12 +138,12 @@ module.exports = function() {
 					
 					for(var i = 0; i < extensions.length; i++){
 						if(fileExtension == extensions[i].toLowerCase()){
-							arrayOfFiles.push(path.join(__dirname, dirPath, "/", file).replace("\\"+config.THIS_PROJECT_FOLDER_NAME, ""));
+							arrayOfFiles.push(path.join(__dirname, dirPath, "/", file).replace("\\"+config.THIS_PROJECT_FOLDER_NAME, "").replace("/"+config.THIS_PROJECT_FOLDER_NAME, ""));
 						}
 					}
 				}
 				else {
-					arrayOfFiles.push(path.join(__dirname, dirPath, "/", file).replace("\\"+config.THIS_PROJECT_FOLDER_NAME, ""));
+					arrayOfFiles.push(path.join(__dirname, dirPath, "/", file).replace("\\"+config.THIS_PROJECT_FOLDER_NAME, "").replace("/"+config.THIS_PROJECT_FOLDER_NAME, ""));
 				}
 			}
 		  })
