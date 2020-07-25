@@ -53,7 +53,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ## Running AWSS on Windows
 
-Download and Extract AWSS's project from this github page, rename the folder to AWSS only not AWSS-master, move AWSS's folder next to your web project to scan it, default: "C:\xampp\htdocs\AWSS"
+Download and Extract AWSS's project from this github page, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "C:\xampp\htdocs\AWSS"
 
 ###### Configurations:
 
@@ -67,7 +67,7 @@ Double click on AWSS.bat to run it. it will get blocked, allow it to run by tell
 
 default command:
 
-> node C:\xampp\htdocs\AWSS\main.js
+> $ node C:\xampp\htdocs\AWSS\main.js
 
 > Full Video of how to run AWSS on windows: https://www.youtube.com/myVideoSoonForWindows
 
@@ -78,13 +78,36 @@ Using a web browser, open this link: https://www.apachefriends.org/download.html
 Or you can download XAMPP through terminal using "wget" command(tool), but you will need to have and know the correct url version to download.
 
 Now working in Terminal: open terminal
-> cd Downloads
-> ls
+> $ cd Downloads
+> $ ls
 
 You should see the XAMPP setup file you downloaded.
 
-> sudo chmod +x xampp-linux-*
-> sudo ./xampp-linux-*
+> $ sudo chmod +x xampp-linux-*
+> $ sudo ./xampp-linux-*
 
-Wait a second for the setup to run, then follow the instructions.
+Wait a second for the setup to run, then follow the instructions. After downloading and installation of XAMPP, run it.
+> $ sudo /opt/lampp/lampp start
+
+Place your Project's folder in htdocs: default: "/opt/lampp/htdocs/YourProjectFolderName"
+
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+
+## Node.js on Ubuntu
+
+> $ sudo apt-get install nodejs
+> $ sudo apt-get install npm
+
+You must set a specific version of Node.js to let AWSS works fine
+
+> $ sudo npm install n -g
+> $ sudo n 12.13.0
+
+We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can ignore the last two commands of installing "n" using npm
+
+###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
+
+## Running AWSS on Ubuntu
+
+Download and Extract AWSS's project from this github page, using a browser or wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
 
