@@ -81,11 +81,13 @@ Or you can download XAMPP through terminal using "wget" command(tool), but you w
 
 Now working in Terminal: open terminal
 > $ cd Downloads
+
 > $ ls
 
 You should see the XAMPP setup file you downloaded.
 
 > $ sudo chmod +x xampp-linux-*
+
 > $ sudo ./xampp-linux-*
 
 Wait a second for the setup to run, then follow the instructions. After downloading and installation of XAMPP, run it.
@@ -98,11 +100,13 @@ Open browser, type: localhost/phpmyadmin, crate empty database, import your proj
 ## Node.js on Ubuntu
 
 > $ sudo apt-get install nodejs
+
 > $ sudo apt-get install npm
 
 You must set a specific version of Node.js to let AWSS works fine
 
 > $ sudo npm install n -g
+
 > $ sudo n 12.13.0
 
 We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can ignore the last two commands of installing "n" using npm
