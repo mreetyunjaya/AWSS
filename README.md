@@ -6,8 +6,7 @@ Web applications have become an integral part of everyday life, but many of thes
 Automated web vulnerability scanners have been heavily used to assess the security of web applications. They can improve the efficiency of vulnerability scanning compared to traditional manual vulnerability detection that are time-consuming, labor-intensive, and inefficient. There are a lot of web vulnerability scanners on the Internet, however, they do not explain the possible attack and how to have counter- measurements against it. 
 We designed and implemented a new automated web vulnerability scanner called Automated Web Software Security (AWSS) Toolkit, which scans a web project’s source code and generates a report of the results with detailed explanation about each possible vulnerability and how to secure against it. We have tested the performance of AWSS, and compared its results with other major open source vulnerability scanners. Our results show that AWSS can identify web software security vulnerabilities more comprehensively and accurately.
 
-NOTE!!: It is Still under development, Usages and Notes will be added later..
-Works only on Windows for Now!, not tested on Linux, Tested on OSX it didn't work, didn't have time to check why, will check later.
+NOTE: It is Still under development, Please, report for any error you get.
 
 # What is AWSS Toolkit?
 AWSS is an Open Source, Source Code Scanning Tool, it is a CLI (Command Line Interface) application, developed with JavaScript (Node.js framework).
@@ -20,6 +19,15 @@ The best of our knowledge, AWSS is the only tool that scans PHP language accordi
 When AWSS scans for a project it checks each and every file line by line for security vulnerabilities. If a vulnerability was detected, it will alert in the report at which line in which file a vulenrability was detected and a "Click Here" link to explain the attack and how to secure against it.
 
 AWSS's results are showed as HTML Report linked with PDF files to explain each attack and its protection mechanism.
+
+# How to Contribute?
+- With its modular architecture, AWSS can be easily extended to support other programming languages that may be scanned for vulnerabilities. The project is open source therefore, programmers with expertise in cyber security can contribute or fork the toolkit and add features. Other programming languages such as Python, C#, Java or Node.js itself can be added to be scanned for vulnerabilities as backend server code.
+
+- If you are a security experienced developer, you can contribute to make this current version better, or you can contribute into adding new programming languages to be scanned.
+But there are rules needs to be followed while improving it:
+1. The Core codes shouldn’t be changed, while you can suggest for better ones or adding new ones to be used if well justified its need.
+2. A specific Language Core Code can be changed if it can be made better.
+3. If you want to add a new language, you need to follow the same code design and file structure of the project.
 
 # How to install and run it?
 To let AWSS work 100%, you will need to install:
