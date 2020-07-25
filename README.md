@@ -26,6 +26,8 @@ To let AWSS work 100%, you will need to install:
 1. localhost on your PC, we recommend (XAMPP).
 2. Node.js Engine v12.13.0
 
+- The best usage of AWSS is to run it directly on your Online Server, and scan your project there. because AWSS also checks Server's PHP and MySQL Versions if they are vulnerable or not.
+
 ## On Windows
 
 ## XAMPP on Windows
@@ -109,5 +111,19 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ## Running AWSS on Ubuntu
 
-Download and Extract AWSS's project from this github page, using a browser or wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
+Download and Extract AWSS's project from this github page, using a browser, wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
+
+###### Configurations:
+
+1. Open config.js inside AWSS's folder using nano, vim or text editor and set the name of your Web Project's name to scan in DEFAULT_PROJECT_PATH_TO_SCAN variable.
+
+2. Open config_php_lang.js inside AWSS's folder: if you are using MySQL you must set the variables as explained in the file, if you are not using MySQL, just set IS_DBMS_USED variable to false, and ignore the rest, note that PHP_EXE_BIN_PATH is set to XAMPP's default location, so change it if you are using different PHP binary or different XAMPP location.
+
+###### PS: The two config files are well explained of what to change to suit your project.
+
+To run AWSS, default command:
+
+> $ sudo node /opt/lampp/htdocs/AWSS/main.js
+
+> Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
 
