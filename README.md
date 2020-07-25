@@ -10,9 +10,15 @@ NOTE!!: It is Still under development, Usages and Notes will be added later..
 Works only on Windows for Now!, not tested on Linux, Tested on OSX it didn't work, didn't have time to check why, will check later.
 
 # What is AWSS Toolkit?
-AWSS is an Open Source Scanning Tool, it is a CLI (Command Line Interface) application, developed with JavaScript (Node.js framework).
+AWSS is an Open Source, Source Code Scanning Tool, it is a CLI (Command Line Interface) application, developed with JavaScript (Node.js framework).
 
-Currently it concentrates on PHP and MySQL programming languages, but since its core functionalities are ready and available for everyone, programmers can contribute and add plugins or extensions to it, to add features and make it scan for other programming languages such as Java, C#, Python, etc.., and their frameworks. So its infrastructure is designed to be contributed with other programmers to make it better and more novel.
+Currently concentrates on PHP and MySQL programming languages, but since its core functionalities are ready and available for everyone, programmers can contribute and add plugins or extensions to it, to add features and make it scan for other programming languages such as Java, C#, Python, etc.., and their frameworks. So its infrastructure is designed to be contributed with other programmers to make it better and more novel.
 
 The best of our knowledge, AWSS is the only tool that scans PHP language according to OWASP Top 10 Web Application Security Risks.
 
+# How AWSS Teaches Developers of How to Secure their Codes ?
+When AWSS scans for a project it checks each and every file line by line for security vulnerabilities. If a vulnerability is detected, it writes in the report at which line in which file a vulenrability was detected and a "Click Here" word to explain the attack and how to secure against it.
+
+AWSS's results are showed as HTML Report linked with PDF files to explain each attack and its protection mechanism.
+
+# How to install and run it?
