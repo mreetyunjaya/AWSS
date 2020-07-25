@@ -22,3 +22,20 @@ When AWSS scans for a project it checks each and every file line by line for sec
 AWSS's results are showed as HTML Report linked with PDF files to explain each attack and its protection mechanism.
 
 # How to install and run it?
+> For Windows:
+To let AWSS work 100%, you will need to install localhost on your Windows PC, we recommend (XAMPP), 
+
+###### XAMPP on Windows
+You can download it for windows from here: https://www.apachefriends.org/download.html choose the version of PHP that suites your project, if you don't know which version to pick, just pick the first one for windows.
+After downloading and installation of XAMPP (Next, Next, Next, Finish), run XAMPP Control Panel, you can type XAMPP in Start Menu and you will see it, run it, Next To Apache and MySQL labels press start (two buttons).
+
+PS: 
+1- Make sure your PC doesn't have Virtual Machine program installed on your PC because it they get conflicted on Ports, you will have to force close the VM background services using Task Manager (Google it, if you don't know what i am talking about)
+2- Make sure Skype program is closed, because they also get conflicted on Port, you can run skype after you start XAMPP.
+
+Place your Project's folder in htdocs: default "C:\xampp\htdocs\YourProjectFolderName\"
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+
+
+
+
