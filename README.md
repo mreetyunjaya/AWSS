@@ -28,7 +28,7 @@ To let AWSS work 100%, you will need to install:
 
 - The best usage of AWSS is to run it directly on your Online Server, and scan your project there. because AWSS also checks Server's PHP and MySQL Versions if they are vulnerable or not.
 
-## On Windows
+# Install AWSS On Windows
 
 ## XAMPP on Windows
 You can download it for windows from here: https://www.apachefriends.org/download.html choose the version of PHP that suits your project, if you don't know which version to pick, just pick the first one for windows.
@@ -73,7 +73,7 @@ default command:
 
 > Full Video of how to run AWSS on windows: https://www.youtube.com/myVideoSoonForWindows
 
-## On Linux (Ubuntu)
+# Install AWSS On Linux (Ubuntu)
 
 ## XAMPP on Ubuntu
 Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" choose the PHP version that suits your project and download it.
