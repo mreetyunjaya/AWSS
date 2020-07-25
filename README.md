@@ -74,8 +74,17 @@ default command:
 ## On Linux (Ubuntu)
 
 ## XAMPP on Ubuntu
-Using a browser open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" choose the PHP version that suits your project and download it.
+Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" choose the PHP version that suits your project and download it.
 Or you can download XAMPP through terminal using "wget" command(tool), but you will need to have and know the correct url version to download.
 
-Now working in Terminal
+Now working in Terminal: open terminal
+> cd Downloads
+> ls
+
+You should see the XAMPP setup file you downloaded.
+
+> sudo chmod +x xampp-linux-*
+> sudo ./xampp-linux-*
+
+Wait a second for the setup to run, then follow the instructions.
 
