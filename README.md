@@ -1,4 +1,4 @@
-# AWSS
+# AWSS #BETA
 AWSS (AUTOMATED WEB SOFTWARE SECURITY) | A NOVEL WEB SECURITY TEACHING TOOLKIT
 
 # Introduction
@@ -17,7 +17,7 @@ Currently concentrates on PHP and MySQL programming languages, but since its cor
 The best of our knowledge, AWSS is the only tool that scans PHP language according to OWASP Top 10 Web Application Security Risks.
 
 # How AWSS Teaches Developers of How to Secure their Codes ?
-When AWSS scans for a project it checks each and every file line by line for security vulnerabilities. If a vulnerability is detected, it writes in the report at which line in which file a vulenrability was detected and a "Click Here" word to explain the attack and how to secure against it.
+When AWSS scans for a project it checks each and every file line by line for security vulnerabilities. If a vulnerability was detected, it will alert in the report at which line in which file a vulenrability was detected and a "Click Here" link to explain the attack and how to secure against it.
 
 AWSS's results are showed as HTML Report linked with PDF files to explain each attack and its protection mechanism.
 
