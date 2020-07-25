@@ -76,7 +76,7 @@ default command:
 # Install AWSS On Linux (Ubuntu)
 
 ## XAMPP on Ubuntu
-Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" choose the PHP version that suits your project and download it.
+Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" section, choose the PHP version that suits your project and download it, if you don't know which version to pick, just pick the first one.
 Or you can download XAMPP through terminal using "wget" command(tool), but you will need to have and know the correct url version to download.
 
 Now working in Terminal: open terminal
@@ -131,3 +131,70 @@ To run AWSS, default command:
 
 > Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
 
+
+
+
+
+
+
+
+# Install AWSS On MacOSX
+
+## XAMPP on MacOSX
+Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for OSX" section, choose the PHP version that suits your project and download it, if you don't know which version to pick, just pick the first one.
+
+Open Downloads Folder and double click on the xampp-osx-.dmg file you downloaded. then install: Next, Next, Next, Finish.
+
+After installation, open Applications Folder using Finder and open XAMPP folder, click on manager-osx.app to open XAMPP Control Panel, click on Manage Servers tab then click Start All button.
+
+Place your Project's folder in htdocs: 
+1. Using Finder, open Applications then navigate to XAMPP folder then htdocs, then place your Project there.
+2. You can user terminal: default location /Applications/XAMPP/htdocs/YourProjectFolderName
+
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Node.js on MacOSX
+https://nodejs.org/en/download/package-manager/#macos
+> $ sudo apt-get install nodejs
+
+> $ sudo apt-get install npm
+
+You must set a specific version of Node.js to let AWSS works fine
+
+> $ sudo npm install n -g
+
+> $ sudo n 12.13.0
+
+We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can ignore the last two commands of installing "n" using npm
+
+###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
+
+## Run AWSS on Ubuntu
+
+Download and Extract AWSS's project from this github page, using a browser, wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
+
+###### Configurations:
+
+1. Open config.js inside AWSS's folder using nano, vim or text editor and set the name of your Web Project's name to scan in DEFAULT_PROJECT_PATH_TO_SCAN variable.
+
+2. Open config_php_lang.js inside AWSS's folder: if you are using MySQL you must set the variables as explained in the file, if you are not using MySQL, just set IS_DBMS_USED variable to false, and ignore the rest, note that PHP_EXE_BIN_PATH is set to XAMPP's default location, so change it if you are using different PHP binary or different XAMPP location.
+
+###### PS: The two config files are well explained of what to change to suit your project.
+
+To run AWSS, default command:
+
+> $ sudo node /opt/lampp/htdocs/AWSS/main.js
+
+> Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
