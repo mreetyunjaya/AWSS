@@ -59,7 +59,7 @@ Download and Extract AWSS's project from this github page, rename the folder to 
 
 ###### Configurations:
 
-1. Open config.js inside AWSS's folder and set the name of your Web Project's name to scan in DEFAULT_PROJECT_PATH_TO_SCAN variable.
+1. Open config.js inside AWSS's folder and set the name of your Web Project's folder to be scanned in DEFAULT_PROJECT_PATH_TO_SCAN variable.
 
 2. Open config_php_lang.js inside AWSS's folder: if you are using MySQL you must set the variables as explained in the file, if you are not using MySQL, just set IS_DBMS_USED variable to false, and ignore the rest, note that PHP_EXE_BIN_PATH is set to XAMPP's default location, so change it if you are using different PHP binary or different XAMPP location.
 
@@ -79,7 +79,7 @@ default command:
 Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" section, choose the PHP version that suits your project and download it, if you don't know which version to pick, just pick the first one.
 Or you can download XAMPP through terminal using "wget" command(tool), but you will need to have and know the correct url version to download.
 
-Now working in Terminal: open terminal
+Now working in Terminal: 
 > $ cd Downloads
 
 > $ ls
@@ -103,7 +103,7 @@ Open browser, type: localhost/phpmyadmin, crate empty database, import your proj
 
 > $ sudo apt-get install npm
 
-You must set a specific version of Node.js to let AWSS works fine
+You must set a specific version of Node.js to let AWSS works without any problem.
 
 > $ sudo npm install n -g
 
@@ -111,7 +111,7 @@ You must set a specific version of Node.js to let AWSS works fine
 
 We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can ignore the last two commands of installing "n" using npm
 
-###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
+###### PS: Using latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
 ## Run AWSS on Ubuntu
 
@@ -119,7 +119,7 @@ Download and Extract AWSS's project from this github page, using a browser, wget
 
 ###### Configurations:
 
-1. Open config.js inside AWSS's folder using nano, vim or text editor and set the name of your Web Project's name to scan in DEFAULT_PROJECT_PATH_TO_SCAN variable.
+1. Open config.js inside AWSS's folder using nano, vim or text editor and set the name of your Web Project's folder to be scanned in DEFAULT_PROJECT_PATH_TO_SCAN variable.
 
 2. Open config_php_lang.js inside AWSS's folder: if you are using MySQL you must set the variables as explained in the file, if you are not using MySQL, just set IS_DBMS_USED variable to false, and ignore the rest, note that PHP_EXE_BIN_PATH is set to XAMPP's default location, so change it if you are using different PHP binary or different XAMPP location.
 
@@ -153,25 +153,16 @@ Place your Project's folder in htdocs:
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Node.js on MacOSX
-https://nodejs.org/en/download/package-manager/#macos
-> $ sudo apt-get install nodejs
+There are several ways to download and install Node.js on MacOSX specified here: https://nodejs.org/en/download/package-manager/#macos
 
-> $ sudo apt-get install npm
+We used: brew (package system), Open Terminal:
 
-You must set a specific version of Node.js to let AWSS works fine
+> $ sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+> $ sudo brew install node
+
+You must set a specific version of Node.js to let AWSS works without any problem.
 
 > $ sudo npm install n -g
 
@@ -179,15 +170,15 @@ You must set a specific version of Node.js to let AWSS works fine
 
 We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can ignore the last two commands of installing "n" using npm
 
-###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
+###### PS: Using the latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Run AWSS on Ubuntu
+## Run AWSS on MacOSX
 
-Download and Extract AWSS's project from this github page, using a browser, wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
+Download and Extract AWSS's project from this github page, using a browser or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/Applications/XAMPP/htdocs/AWSS"
 
 ###### Configurations:
 
-1. Open config.js inside AWSS's folder using nano, vim or text editor and set the name of your Web Project's name to scan in DEFAULT_PROJECT_PATH_TO_SCAN variable.
+1. Open config.js inside AWSS's folder using text editor, put the name of your Web Project's folder to be scanned in DEFAULT_PROJECT_PATH_TO_SCAN variable.
 
 2. Open config_php_lang.js inside AWSS's folder: if you are using MySQL you must set the variables as explained in the file, if you are not using MySQL, just set IS_DBMS_USED variable to false, and ignore the rest, note that PHP_EXE_BIN_PATH is set to XAMPP's default location, so change it if you are using different PHP binary or different XAMPP location.
 
@@ -195,6 +186,6 @@ Download and Extract AWSS's project from this github page, using a browser, wget
 
 To run AWSS, default command:
 
-> $ sudo node /opt/lampp/htdocs/AWSS/main.js
+> $ sudo node /Applications/XAMPP/htdocs/AWSS/main.js
 
 > Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
