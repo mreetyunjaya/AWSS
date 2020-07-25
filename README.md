@@ -23,6 +23,7 @@ AWSS's results are showed as HTML Report linked with PDF files to explain each a
 
 # How to install and run it?
 > For Windows:
+
 To let AWSS work 100%, you will need to install localhost on your Windows PC, we recommend (XAMPP), 
 
 ###### XAMPP on Windows
@@ -40,6 +41,15 @@ Place your Project's folder in htdocs: default "C:\xampp\htdocs\YourProjectFolde
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
 
+###### Node.js on Windows
+
+You must download a specific version of Node.js for windows from here: https://nodejs.org/en/blog/release/v12.13.0/ select (Windows 64-bit Installer), then download, Next, Next, Next and Finish.
+
+We are not keeping up with nodejs upgrades every month, so if you would like to test it on your own, you can download latest node.js version from here: https://nodejs.org/en/download/ choose (Windows Installer (.msi)), then download, Next, Next, Next and Finish.
+
+PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
+
+###### Running AWSS on Windows
 
 
 
