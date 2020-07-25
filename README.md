@@ -131,13 +131,6 @@ To run AWSS, default command:
 
 > Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
 
-
-
-
-
-
-
-
 # Install AWSS On MacOSX
 
 ## XAMPP on MacOSX
@@ -188,4 +181,4 @@ To run AWSS, default command:
 
 > $ sudo node /Applications/XAMPP/htdocs/AWSS/main.js
 
-> Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
+> Full Video of how to run AWSS on MacOSX: https://www.youtube.com/myVideoSoonForMacOSX
