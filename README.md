@@ -51,7 +51,7 @@ After downloading and installation of XAMPP (Next, Next, Next, Finish), run XAMP
 
 Place your Project's folder in htdocs: default: "C:\xampp\htdocs\YourProjectFolderName"
 
-Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
 ## Node.js on Windows
 
@@ -103,7 +103,7 @@ Wait a second for the setup to run, then follow the instructions. After download
 
 Place your Project's folder in htdocs: default: "/opt/lampp/htdocs/YourProjectFolderName"
 
-Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
 ## Node.js on Ubuntu
 
@@ -152,7 +152,7 @@ Place your Project's folder in htdocs:
 1. Using Finder, open Applications then navigate to XAMPP folder then htdocs, then place your Project there.
 2. You can user terminal: default location /Applications/XAMPP/htdocs/YourProjectFolderName
 
-Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "you_chose_dbname_in_phpmyadmin"
+Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
 ## Node.js on MacOSX
 There are several ways to download and install Node.js on MacOSX specified here: https://nodejs.org/en/download/package-manager/#macos
