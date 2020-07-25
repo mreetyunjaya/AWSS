@@ -53,7 +53,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Running AWSS on Windows
+## Run AWSS on Windows
 
 Download and Extract AWSS's project from this github page, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "C:\xampp\htdocs\AWSS"
 
@@ -113,7 +113,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Running AWSS on Ubuntu
+## Run AWSS on Ubuntu
 
 Download and Extract AWSS's project from this github page, using a browser, wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
 
