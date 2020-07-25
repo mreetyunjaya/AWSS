@@ -21,7 +21,7 @@ When AWSS scans for a project it checks each and every file line by line for sec
 AWSS's results are showed as HTML Report linked with PDF files to explain each attack and its protection mechanism.
 
 # How to Contribute?
-- With its modular architecture, AWSS can be easily extended to support other programming languages that may be scanned for vulnerabilities. The project is open source therefore, programmers with expertise in cyber security can contribute or fork the toolkit and add features. Other programming languages such as Python, C#, Java or Node.js itself can be added to be scanned for vulnerabilities as backend server code.
+- AWSS can be easily extended to support other programming languages that may be scanned for vulnerabilities. The project is open source therefore, programmers with expertise in cyber security can contribute or fork the toolkit and add features. Other programming languages such as Python, C#, Java or Node.js itself can be added to be scanned for vulnerabilities as backend server code.
 
 - If you are a security experienced developer, you can contribute to make this current version better, or you can contribute into adding new programming languages to be scanned.
 But there are rules needs to be followed while improving it:
