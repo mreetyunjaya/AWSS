@@ -199,4 +199,4 @@ Special Thanks to:
 2. Assist. Prof. Dr. Selçuk Baktır: https://scholar.google.com/citations?user=iwR7YF8AAAAJ&hl=en
 3. Assist. Prof. Dr. Özgül Küçük: https://scholar.google.com/citations?user=qJJSkrAAAAAJ&hl=en
 
-For making this toolkit possible by giving their guidance and help.
+For making this toolkit possible by providing their guidance and help.
