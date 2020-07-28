@@ -107,9 +107,9 @@ Open browser, type: localhost/phpmyadmin, crate empty database, import your proj
 
 ## Node.js on Ubuntu
 
-> $ sudo apt-get install nodejs
+> $ sudo apt-get install nodejs -y
 
-> $ sudo apt-get install npm
+> $ sudo apt-get install npm -y
 
 You must set a specific version of Node.js to let AWSS works without any problem.
 
