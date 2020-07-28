@@ -36,9 +36,9 @@ To let AWSS work 100%, you will need to install:
 
 - The best usage of AWSS is to run it directly on your Online Server, and scan your project there. because AWSS also checks Server's PHP and MySQL Versions if they are vulnerable or not.
 
-# Install AWSS On Windows
+# A) Install AWSS On Windows
 
-## XAMPP on Windows
+## 1. XAMPP on Windows
 You can download it for windows from here: https://www.apachefriends.org/download.html choose the version of PHP that suits your project, if you don't know which version to pick, just pick the first one for windows.
 
 After downloading and installation of XAMPP (Next, Next, Next, Finish), run XAMPP Control Panel, you can type XAMPP in Start Menu and you will see it, run it, Next To Apache and MySQL labels press start (two buttons).
@@ -53,7 +53,7 @@ Place your Project's folder in htdocs: default: "C:\xampp\htdocs\YourProjectFold
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
-## Node.js on Windows
+## 2. Node.js on Windows
 
 You must download a specific version of Node.js for windows from here: https://nodejs.org/en/blog/release/v12.13.0/ select (Windows 64-bit Installer), then download, Next, Next, Next and Finish.
 
@@ -61,7 +61,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ###### PS: Downloading latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Run AWSS on Windows
+## 3. Run AWSS on Windows
 
 Download and Extract AWSS's project from this github page, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "C:\xampp\htdocs\AWSS"
 
@@ -81,9 +81,9 @@ default command:
 
 > Full Video of how to run AWSS on windows: https://www.youtube.com/myVideoSoonForWindows
 
-# Install AWSS On Linux (Ubuntu)
+# B) Install AWSS On Linux (Ubuntu)
 
-## XAMPP on Ubuntu
+## 1. XAMPP on Ubuntu
 Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for Linux" section, choose the PHP version that suits your project and download it, if you don't know which version to pick, just pick the first one.
 Or you can download XAMPP through terminal using "wget" command(tool), but you will need to have and know the correct url version to download.
 
@@ -105,7 +105,7 @@ Place your Project's folder in htdocs: default: "/opt/lampp/htdocs/YourProjectFo
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
-## Node.js on Ubuntu
+## 2. Node.js on Ubuntu
 
 > $ sudo apt-get install nodejs -y
 
@@ -121,7 +121,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ###### PS: Using latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Run AWSS on Ubuntu
+## 3. Run AWSS on Ubuntu
 
 Download and Extract AWSS's project from this github page, using a browser, wget or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/opt/lampp/htdocs/AWSS"
 
@@ -139,9 +139,9 @@ To run AWSS, default command:
 
 > Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
 
-# Install AWSS On MacOSX
+# C) Install AWSS On MacOSX
 
-## XAMPP on MacOSX
+## 1. XAMPP on MacOSX
 Using a web browser, open this link: https://www.apachefriends.org/download.html and look for "XAMPP for OSX" section, choose the PHP version that suits your project and download it, if you don't know which version to pick, just pick the first one.
 
 Open Downloads Folder and double click on the xampp-osx-.dmg file you downloaded. then install: Next, Next, Next, Finish.
@@ -154,7 +154,7 @@ Place your Project's folder in htdocs:
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
-## Node.js on MacOSX
+## 2. Node.js on MacOSX
 There are several ways to download and install Node.js on MacOSX specified here: https://nodejs.org/en/download/package-manager/#macos
 
 We used: brew (package system), Open Terminal:
@@ -173,7 +173,7 @@ We are not keeping up with nodejs upgrades every month, so if you would like to 
 
 ###### PS: Using the latest Node.js Engine may require you to update AWSS's modules, so if you know what you are doing and you have time, and want to contribute, you can report your latest version of node.js and update modules and ask us to commit it on the repo if it works.
 
-## Run AWSS on MacOSX
+## 3. Run AWSS on MacOSX
 
 Download and Extract AWSS's project from this github page, using a browser or git, rename the folder to "AWSS" only, not "AWSS-master", move AWSS's folder next to your web project to scan it, default: "/Applications/XAMPP/htdocs/AWSS"
 
@@ -190,3 +190,13 @@ To run AWSS, default command:
 > $ sudo node /Applications/XAMPP/htdocs/AWSS/main.js
 
 > Full Video of how to run AWSS on MacOSX: https://www.youtube.com/myVideoSoonForMacOSX
+
+# Special Thanks
+
+Special Thanks to:
+
+1. Assist. Prof. Dr. Ece Gelal Soyak: https://scholar.google.com.tr/citations?user=w-RBj5QAAAAJ&hl=en
+2. Assist. Prof. Dr. Selçuk Baktır: https://scholar.google.com/citations?user=iwR7YF8AAAAJ&hl=en
+3. Assist. Prof. Dr. Özgül Küçük: https://scholar.google.com/citations?user=qJJSkrAAAAAJ&hl=en
+
+For making this toolkit possible by giving their guidance and help.
