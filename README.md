@@ -150,7 +150,7 @@ After installation, open Applications Folder using Finder and open XAMPP folder,
 
 Place your Project's folder in htdocs: 
 1. Using Finder, open Applications then navigate to XAMPP folder then htdocs, then place your Project there.
-2. You can user terminal: default location /Applications/XAMPP/htdocs/YourProjectFolderName
+2. You can use terminal: default location /Applications/XAMPP/htdocs/YourProjectFolderName
 
 Open browser, type: localhost/phpmyadmin, crate empty database, import your project_database.sql file to it, open your project's folder and change your project's config file to connect to MySQL's localhost: default configs are: host: "localhost" or "127.0.0.1", username: "root", password: "",(Empty_String), database name: "dbname_you_chose_in_phpmyadmin"
 
