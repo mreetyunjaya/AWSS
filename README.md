@@ -137,7 +137,7 @@ To run AWSS, default command:
 
 > $ sudo node /opt/lampp/htdocs/AWSS/main.js
 
-> Full Video of how to run AWSS on ubuntu: https://youtu.be/XrAB8_BHxfo
+> Full Video of how to run AWSS on Ubuntu: https://youtu.be/XrAB8_BHxfo
 
 # C) Install AWSS On MacOSX
 
