@@ -79,7 +79,7 @@ default command:
 
 > $ node C:\xampp\htdocs\AWSS\main.js
 
-> Full Video of how to run AWSS on windows: https://www.youtube.com/myVideoSoonForWindows
+> Full Video of how to run AWSS on Windows: https://youtu.be/FKxDa3zYz1E
 
 # B) Install AWSS On Linux (Ubuntu)
 
@@ -137,7 +137,7 @@ To run AWSS, default command:
 
 > $ sudo node /opt/lampp/htdocs/AWSS/main.js
 
-> Full Video of how to run AWSS on ubuntu: https://www.youtube.com/myVideoSoonForUbuntu
+> Full Video of how to run AWSS on ubuntu: https://youtu.be/XrAB8_BHxfo
 
 # C) Install AWSS On MacOSX
 
@@ -189,7 +189,7 @@ To run AWSS, default command:
 
 > $ sudo node /Applications/XAMPP/htdocs/AWSS/main.js
 
-> Full Video of how to run AWSS on MacOSX: https://www.youtube.com/myVideoSoonForMacOSX
+> Full Video of how to run AWSS on MacOSX: https://youtu.be/IThRZEQVa7M
 
 # Special Thanks
 
