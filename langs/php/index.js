@@ -239,6 +239,12 @@ module.exports = function() {
 			}
 		}
 		
+		// Checking for HTTP
+		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN, [], true, true, ["php", "html", "css", "js", "json"]);
+		for(var i = 0; i < files.length; i++){
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["\"http://", "'http://"], files[i], false, false, false, false, "This line does not use a secure connection as HTTPS to exchange sensitive information.", "You should transmit all sensitive data over a HTTPS connection instead of HTTP.", true);
+		}
+		
 		// Results
 		core.showResults(num_vulnerabilities_found, "Sensitive Data Exposure", "../langs/php/docs/php_sensitive_data_exposure_prevention.pdf", true);
 		return num_vulnerabilities_found;
