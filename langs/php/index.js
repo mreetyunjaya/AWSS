@@ -20,18 +20,32 @@ module.exports = function() {
 		
 		for(var i = 0; i < files.length; i++){
 			// MySQL Injection Check
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->multi_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'multi_query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysqli_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysqli_query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->real_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'real_query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("->reap_async_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'reap_async_query' function can be injected", true);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysqli_query( \"", "mysqli_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysqli_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysqli_query( ,$", "mysqli_query( \"$", "mysqli_query( '$", "mysqli_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysqli_query' function can be injected", true, null, true, false, false, true, false);
+			
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->query( \"", "->query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->query( $", "->query( \"$", "->query( '$", "->query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'query' function can be injected", true, null, true, false, false, true, false);
+			
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->multi_query( \"", "->multi_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'multi_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->multi_query( $", "->multi_query( \"$", "->multi_query( '$", "->multi_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'multi_query' function can be injected", true, null, true, false, false, true, false);
+
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->real_query( \"", "->real_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'real_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->real_query( ,$", "->real_query( \"$", "->eal_query( '$", "->real_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'real_query' function can be injected", true, null, true, false, false, true, false);
+			
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->reap_async_query( \"", "->reap_async_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'reap_async_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["->reap_async_query( ,$", "->reap_async_query( \"$", "->reap_async_query( '$", "->reap_async_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'reap_async_query' function can be injected", true, null, true, false, false, true, false);
 			
 			// Old mysql functions
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_db_query(", files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_db_query' function can be injected", true);
-			num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("mysql_unbuffered_query(", files[i], false, false, true, false, "File has a MySQL Injection Vulnerability", "'mysql_unbuffered_query' function can be injected", true);
-		
-			// PostgreSQL injection detections can be implemented here // but not written yet
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_query( \"", "mysql_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_query( ,$", "mysql_query( \"$", "mysql_query( '$", "mysql_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_query' function can be injected", true, null, true, false, false, true, false);
+			
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_db_query( \"", "mysql_db_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_db_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_db_query( ,$", "mysql_db_query( \"$", "mysql_db_query( '$", "mysql_db_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_db_query' function can be injected", true, null, true, false, false, true, false);
+			
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_unbuffered_query( \"", "mysql_unbuffered_query( '"], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_unbuffered_query' function can be injected", true, null, true, false, true, true, false);
+			num_vulnerabilities_found = num_vulnerabilities_found + core.findLinesInFile(["mysql_unbuffered_query( ,$", "mysql_unbuffered_query( \"$", "mysql_unbuffered_query( '$", "mysql_unbuffered_query( ()."], files[i], false, true, false, false, "File has a MySQL Injection Vulnerability", "'mysql_unbuffered_query' function can be injected", true, null, true, false, false, true, false);
+			
+			// PostgreSQL injection detections can be implemented here // because not implemented yet
 		}
 		
 		// Prepare OS Commands Array to Check

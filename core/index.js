@@ -159,7 +159,7 @@ module.exports = function() {
 	  return arrayOfFiles;
 	}
 	
-	this.findLineInFile = function(lineToFind, inFile, returnLinesNumberArray = false, isCaseSensitive = false, isSpaceSensitive = false, verbose = false, message = "", message2 = "", writeToFile = false, filePath = null){
+	this.findLineInFile = function(lineToFind, inFile, returnLinesNumberArray = false, isCaseSensitive = false, isSpaceSensitive = false, verbose = false, message = "", message2 = "", writeToFile = false, filePath = null, checkIfIncompleteCodeLine = false, ignoreLineIfIncompleteCodeLineDetected = false, notifyOnlyIfIncompleteCodeLineDetected = false, checkIfMultipleCodeLinesInOneLine = false, notifyOnlyIfMultipleCodeLinesInOneLineDetected = false){
 		var wordsFoundInLineNumber = [];
 		
 		try {
@@ -171,31 +171,31 @@ module.exports = function() {
 			for(var i = 0; i < lines.length; i++){
 				for(var j = 0; j < wordsToFindInLine.length; j++){
 					wordsFoundInLine[j] = false;
-				}
 				
-				if(isCaseSensitive){
-					for(var j = 0; j < wordsToFindInLine.length; j++){
+					if(isCaseSensitive){
 						if(isSpaceSensitive){
 							if(lines[i].includes(wordsToFindInLine[j])){
+								lines[i] = lines[i].replace(wordsToFindInLine[j], ""); // to make sure it doesn't find duplicate result
 								wordsFoundInLine[j] = true;
 							}
 						}
 						else {
 							if(lines[i].replaceAll(" ", "").includes(wordsToFindInLine[j].replaceAll(" ", ""))){
+								lines[i] = lines[i].replaceAll(" ", "").replace(wordsToFindInLine[j].replaceAll(" ", ""), ""); // to make sure it doesn't find duplicate result
 								wordsFoundInLine[j] = true;
 							}
 						}
 					}
-				}
-				else {
-					for(var j = 0; j < wordsToFindInLine.length; j++){
+					else {
 						if(isSpaceSensitive){
 							if(lines[i].toLowerCase().includes(wordsToFindInLine[j].toLowerCase())){
+								lines[i] = lines[i].toLowerCase().replace(wordsToFindInLine[j].toLowerCase(), ""); // to make sure it doesn't find duplicate result
 								wordsFoundInLine[j] = true;
 							}
 						}
 						else {
 							if(lines[i].toLowerCase().replaceAll(" ", "").includes(wordsToFindInLine[j].toLowerCase().replaceAll(" ", ""))){
+								lines[i] = lines[i].toLowerCase().replaceAll(" ", "").replace(wordsToFindInLine[j].toLowerCase().replaceAll(" ", ""), ""); // to make sure it doesn't find duplicate result
 								wordsFoundInLine[j] = true;
 							}
 						}
@@ -216,12 +216,31 @@ module.exports = function() {
 							this.println(inFile + " " + message + " (Found in line number: " + (i+1) + ")" + " " + message2, "red", "bold");
 						}
 						else {
-							console.log(lineToFind + " (Found in line number: " + (i+1) + ")");
+							console.log(inFile + " " + lineToFind + " (Found in line number: " + (i+1) + ")");
 						}
+					}
+						
+					var extraNotifications = "";
+					if(checkIfIncompleteCodeLine && !lines[i].includes(";")){
+						if(ignoreLineIfIncompleteCodeLineDetected){
+							continue;
+						}
+						
+						extraNotifications = ", Note: Unfinished command detected in this line.";
+					}
+					if(checkIfIncompleteCodeLine && notifyOnlyIfIncompleteCodeLineDetected && lines[i].includes(";")){
+						continue;
+					}
+					
+					if(checkIfMultipleCodeLinesInOneLine && lines[i].includes(";") && (lines[i].split(";").length - 1) > 1){
+						extraNotifications = ", Note: Multiple commands detected in this line.";
+					}
+					if(checkIfMultipleCodeLinesInOneLine && notifyOnlyIfMultipleCodeLinesInOneLineDetected && lines[i].includes(";") && (lines[i].split(";").length - 1) <= 1){
+						continue;
 					}
 					
 					if(writeToFile){
-						this.appendToFile("<span style='color:red; font-weight:bold;'>" + inFile + " " + message + " (Found in line number: " + (i+1) + ")" + " " + message2 + "</span><br/>", filePath);
+						this.appendToFile("<span style='color:red; font-weight:bold;'>" + inFile + " " + message + " (Found in line number: " + (i+1) + ")" + " " + message2 + extraNotifications + "</span><br/>", filePath);
 					}
 						
 					wordsFoundInLineNumber.push(i+1);
@@ -246,6 +265,28 @@ module.exports = function() {
 		}
 		else {
 			return wordsFoundInLineNumber.length;
+		}
+	}
+	
+	this.findLinesInFile = function(linesToFind = [], inFile, returnLinesNumberArray = false, isCaseSensitive = false, isSpaceSensitive = false, verbose = false, message = "", message2 = "", writeToFile = false, filePath = null, checkIfIncompleteCodeLine = false, ignoreLineIfIncompleteCodeLineDetected = false, notifyOnlyIfIncompleteCodeLineDetected = false, checkIfMultipleCodeLinesInOneLine = false, notifyOnlyIfMultipleCodeLinesInOneLineDetected = false){
+		var numberOfLinesFound = 0; 
+		var linesNumberArray = [];
+		
+		for(var i = 0; i < linesToFind.length; i++){
+			var result = this.findLineInFile(linesToFind[i], inFile, returnLinesNumberArray, isCaseSensitive, isSpaceSensitive, verbose, message, message2, writeToFile, filePath, checkIfIncompleteCodeLine, ignoreLineIfIncompleteCodeLineDetected, notifyOnlyIfIncompleteCodeLineDetected, checkIfMultipleCodeLinesInOneLine, notifyOnlyIfMultipleCodeLinesInOneLineDetected);
+			if(returnLinesNumberArray){
+				linesNumberArray.concat(result);
+			}
+			else {
+				numberOfLinesFound = numberOfLinesFound + result;
+			}
+		}
+		
+		if(returnLinesNumberArray){
+			return linesNumberArray;
+		}
+		else {
+			return numberOfLinesFound;
 		}
 	}
 	
