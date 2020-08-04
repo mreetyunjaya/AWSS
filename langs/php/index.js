@@ -336,21 +336,21 @@ module.exports = function() {
 		var files = core.getAllFilesPaths(core.config.DEFAULT_PROJECT_PATH_TO_SCAN);
 		
 		for(var i = 0; i < files.length; i++){
-			if(core.findLineInFile("$_GET[", files[i]) > 0){
-				if(core.findLineInFile("htmlentities( $_GET[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_GET[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_GET[", files[i], false, true) == 0 && core.findLineInFile("xss $_GET[", files[i]) == 0){
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_GET[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_GET' user input can be injected, please make sure to filter or sanitize any $_GET user input from Javascript, HTML and CSS codes input", true);
+			if(core.findLineInFile("$_GET[ ;", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_GET[ ;", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_GET[ ;", files[i], false, true) == 0 && core.findLineInFile("->purify( $_GET[ ;", files[i], false, true) == 0 && core.findLineInFile("xss $_GET[ ;", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_GET[ ;", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_GET' user input can be injected, please make sure to filter or sanitize any $_GET user input from Javascript, HTML and CSS codes input", true);
 				}
 			}
 			
-			if(core.findLineInFile("$_POST[", files[i]) > 0){
-				if(core.findLineInFile("htmlentities( $_POST[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_POST[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_POST[", files[i], false, true) == 0 && core.findLineInFile("xss $_POST[", files[i]) == 0){
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_POST[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_POST' user input can be injected, please make sure to filter or sanitize any $_POST user input from Javascript, HTML and CSS codes input", true);	
+			if(core.findLineInFile("$_POST[ ;", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_POST[ ;", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_POST[ ;", files[i], false, true) == 0 && core.findLineInFile("->purify( $_POST[ ;", files[i], false, true) == 0 && core.findLineInFile("xss $_POST[ ;", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_POST[ ;", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_POST' user input can be injected, please make sure to filter or sanitize any $_POST user input from Javascript, HTML and CSS codes input", true);	
 				}
 			}
 			
-			if(core.findLineInFile("$_REQUEST[", files[i]) > 0){
-				if(core.findLineInFile("htmlentities( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("->purify( $_REQUEST[", files[i], false, true) == 0 && core.findLineInFile("xss $_REQUEST[", files[i]) == 0){
-					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_REQUEST[", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_REQUEST' user input can be injected, please make sure to filter or sanitize any $_REQUEST user input from Javascript, HTML and CSS codes input", true);	
+			if(core.findLineInFile("$_REQUEST[ ;", files[i]) > 0){
+				if(core.findLineInFile("htmlentities( $_REQUEST[ ;", files[i], false, true) == 0 && core.findLineInFile("htmlspecialchars( $_REQUEST[ ;", files[i], false, true) == 0 && core.findLineInFile("->purify( $_REQUEST[ ;", files[i], false, true) == 0 && core.findLineInFile("xss $_REQUEST[ ;", files[i]) == 0){
+					num_vulnerabilities_found = num_vulnerabilities_found + core.findLineInFile("$_REQUEST[ ;", files[i], false, true, false, false, "File might have Cross-Site Scripting Vulnerability", "'$_REQUEST' user input can be injected, please make sure to filter or sanitize any $_REQUEST user input from Javascript, HTML and CSS codes input", true);	
 				}
 			}
 			

@@ -10,7 +10,7 @@ module.exports = {
 	
 	// if above IS_DBMS_USED = true, bellow settings are enabled and must be set
 	YOUR_WEBAPP_DBMS_SERVER_IP: "127.0.0.1", // or localhost // or other ip
-	YOUR_WEBAPP_DBMS_DB_NAME: "management_system",
+	YOUR_WEBAPP_DBMS_DB_NAME: "your_project_database_name",
 	YOUR_WEBAPP_DBMS_USERNAME: "root",
 	YOUR_WEBAPP_DBMS_PASSWORD: "",
 	
