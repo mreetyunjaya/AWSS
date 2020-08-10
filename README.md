@@ -1,5 +1,5 @@
 # AWSS #BETA
-AWSS (AUTOMATED WEB SOFTWARE SECURITY) | A NOVEL WEB SECURITY TEACHING TOOLKIT
+AWSS (AUTOMATED WEB SOFTWARE SECURITY) | A NOVEL OPEN SOURCE WEB SECURITY SCANNER
 
 # Introduction
 Web applications have become an integral part of everyday life, but many of these applications are deployed with critical vulnerabilities that can be fatally exploited. As the technology used to develop these applications become sophisticated, so do the attackers’ techniques. Attackers no longer need physical access to the victims, they can attack more than one at the same time and the possibility of being caught and brought to justice is minimal.
